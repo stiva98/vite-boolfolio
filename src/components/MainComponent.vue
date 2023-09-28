@@ -20,7 +20,16 @@ export default {
                     Laravel Boolfolio - API
                 </h1>
             </div>
+            <router-link :to="{ name:'home' }">
+                Homepage
+            </router-link>
+            &nbsp;
+            <router-link :to="{ name:'about' }">
+                Chi siamo
+            </router-link>
         </div>
+
+        <router-view></router-view>
     </main>
 </template>
 

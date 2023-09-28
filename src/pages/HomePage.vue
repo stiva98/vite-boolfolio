@@ -2,7 +2,6 @@
 import axios from 'axios';
 
 export default {
-    name: "home",
     data() {
         return {
             posts: [],
@@ -13,6 +12,9 @@ export default {
     },
     created () {
         this.getPosts();
+    },
+    mounted() {
+        console.log('HomePage')
     },
     methods: {
         getPosts() {
