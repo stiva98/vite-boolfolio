@@ -22,10 +22,13 @@ export default {
                         if (res.data.success) {
                             this.post = res.data.results;
                         }
-                        else {
+                        this.loading = false;
+                    })
+                    .catch(err=> {
+                        console.log(err)
+                        if (err.response.status == 404) {
                             this.$router.push({ name: 'notfound' })
                         }
-                        this.loading = false;
                     })
             }
         }
