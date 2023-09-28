@@ -13,9 +13,6 @@ export default {
     created () {
         this.getPosts();
     },
-    mounted() {
-        console.log('HomePage')
-    },
     methods: {
         getPosts() {
             if (!this.loading) {
@@ -64,11 +61,11 @@ export default {
         <div class="row">
             <div class="col-4 mb-3" v-for="post in posts" :key="post.id">
                 <div class="card" style="width: 18rem;">
-                    <img :src="'http://localhost:8000/storage/' + post.cover_image" class="card-img-top" :alt="post.title">
                     <div class="card-body">
                         <h5 class="card-title">{{ post.title }}</h5>
-                        <h3 class="card-title">{{ post.slug }}</h3>
-                        <p class="card-text">{{ post.content }}</p>
+                        <router-link :to="{ name:'post', params: {slug: post.slug} }">
+                            Guarda il post
+                        </router-link>
                     </div>
                 </div>
             </div>

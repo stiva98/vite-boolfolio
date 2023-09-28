@@ -4,6 +4,7 @@ import HomePage from './pages/HomePage.vue';
 import AboutPage from './pages/AboutPage.vue';
 import NotFoundPage from './pages/NotFoundPage.vue';
 import PostsPage from './pages/PostsPage.vue';
+import SinglePostPage from './pages/SinglePostPage.vue';
 
 const router = createRouter({
     history: createWebHistory(),
@@ -19,14 +20,19 @@ const router = createRouter({
             component: AboutPage,
         },
         {
-            path: '/:pathMatch(.*)*',
-            name: 'notfound',
-            component: NotFoundPage,
-        },
-        {
             path: '/blog',
             name: 'posts',
             component: PostsPage,
+        },
+        {
+            path: '/blog:slug',
+            name: 'post',
+            component: SinglePostPage,
+        },
+        {
+            path: '/:pathMatch(.*)*',
+            name: 'notfound',
+            component: NotFoundPage,
         }
     ]
 });
