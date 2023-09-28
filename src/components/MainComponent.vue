@@ -27,6 +27,10 @@ export default {
             <router-link :to="{ name:'about' }">
                 Chi siamo
             </router-link>
+            &nbsp;
+            <router-link :to="{ name:'posts' }">
+                Tutti i post
+            </router-link>
         </div>
 
         <router-view></router-view>
