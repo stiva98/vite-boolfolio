@@ -25,7 +25,7 @@ export default {
                         this.loading = false;
                     })
                     .catch(err=> {
-                        console.log(err)
+                        //console.log(err)
                         if (err.response.status == 404) {
                             this.$router.push({ name: 'notfound' })
                         }
@@ -49,6 +49,9 @@ export default {
                             <h5 class="card-title">{{ post.title }}</h5>
                             <h3 class="card-title">{{ $route.params.slug }}</h3>
                             <p class="card-text">{{ post.content }}</p>
+                            <router-link :to="{ name:'posts' }">
+                                Torna a tutti i post
+                            </router-link>
                         </div>
                     </div>
                 </div>
