@@ -42,7 +42,9 @@ export default {
             <div class="row">
                 <div class="col-4 mb-3">
                     <div class="card" style="width: 18rem;">
-                        <img :src="'http://localhost:8000/storage/' + post.cover_image" class="card-img-top" :alt="post.title">
+                        <template v-if="post.full_cover_image">
+                            <img :src="post.full_cover_image" class="card-img-top" :alt="post.title">
+                        </template>
                         <div class="card-body">
                             <h5 class="card-title">{{ post.title }}</h5>
                             <h3 class="card-title">{{ $route.params.slug }}</h3>
